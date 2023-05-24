@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 
-
 #description_summary {
     font-style: italic;
     font-weight: 300;
@@ -21,3 +20,4 @@
 .yellow_color {
     color: #FAF014;
 }
+
