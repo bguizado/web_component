@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#description_summary {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 400px;
+    width: 80%;
+    text-align: left;
+    color: #027000;
+}
+
+.yellow_color {
+    color: #FAF014;
+}
