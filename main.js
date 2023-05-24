@@ -108,3 +108,41 @@ class myH1 extends HTMLElement{
 }
 
 window.customElements.define('my-h1', myH1)
+
+
+class myLink extends HTMLElement{
+    constructor(){
+        super();
+        this._shadowRoot = this.attachShadow({mode:'open'});
+    }
+
+    connectedCallback(){
+        this._render();
+     }
+
+    _render() {
+        this._shadowRoot.innerHTML = `
+        <style>
+            #link_go_back {
+                border: 1px solid #FAF014;
+                font-size: 35px;
+                margin:  auto auto 40px;
+                padding:  7px 0px;
+                font-style: italic;
+            }
+
+            #go_back{
+                text-decoration: none;
+                color: #027000;
+                padding: 1rem;
+            }
+        </style>
+
+        <div id="link_go_back">
+            <a id="go_back" href="">${this.textContent}</a>
+        </div>
+        `;
+    }
+}
+
+window.customElements.define('my-link', myLink)
