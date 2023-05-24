@@ -71,3 +71,40 @@ class myHeader extends HTMLElement{
 }
 
 window.customElements.define('my-header', myHeader)
+
+
+class myH1 extends HTMLElement{
+    constructor(){
+        super();
+        this._shadowRoot = this.attachShadow({mode:'open'});
+    }
+
+    connectedCallback(){
+        this._render();
+        const textoEncabezado = this.textContent;
+        const encabezado = document.createElement('h1');
+        encabezado.textContent = textoEncabezado;
+        this.shadowRoot.appendChild(encabezado);
+    }
+
+    _render() {
+        this._shadowRoot.innerHTML = `
+        <style>
+            h1 {
+                font-style: italic;
+                margin-bottom: 75px;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 48px;
+                color: #027000;
+                height: 12vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        </style>
+        `;
+    }
+}
+
+window.customElements.define('my-h1', myH1)

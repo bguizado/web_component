@@ -6,6 +6,14 @@
     box-sizing: border-box;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
 #description_summary {
     font-style: italic;
     font-weight: 300;
