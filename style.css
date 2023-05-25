@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    font-size: 30px;
+    line-height: 36px;
+    font-style: italic;
+    color: #027000;
+}
+
+#reservar_mesa {
+    box-sizing: border-box;
+    border: 1px solid #027000;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
+}
+
+.mesa {
+    box-sizing: border-box;
+    border: 1px solid #FAF014;
+    margin: 40px 40px;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

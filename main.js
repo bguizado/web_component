@@ -23,9 +23,7 @@ class myHeader extends HTMLElement{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                height: 8vh;
                 padding: 1rem;
-
             }
 
             div {
@@ -92,12 +90,10 @@ class myH1 extends HTMLElement{
         <style>
             h1 {
                 font-style: italic;
-                margin-bottom: 75px;
                 font-weight: 700;
                 font-size: 40px;
                 line-height: 48px;
                 color: #027000;
-                height: 12vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -140,6 +136,7 @@ class myLink extends HTMLElement{
                 border: 1px solid ${colorBorderEnlace};
                 font-size: 35px;
                 margin:  auto auto 40px;
+                margin-top: 5px;
                 padding:  7px 0px;
                 font-style: italic;
                 background-color: ${backgroundEnlace}
@@ -211,7 +208,7 @@ class myForm extends HTMLElement{
             }
             
             .label_form {
-                margin-top: 1rem;
+                margin-top: 0.5rem;
             }
             
             #date {
