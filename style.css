@@ -17,7 +17,6 @@ p {
     font-size: 30px;
     line-height: 36px;
     font-style: italic;
-    color: #027000;
 }
 
 #reservar_mesa {
@@ -28,6 +27,7 @@ p {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    flex-flow: wrap;
 }
 
 #contenedor_secundario1 {
@@ -83,6 +83,10 @@ p {
 #pago4 {
     background-color: #027000;
     color: #FAF014;
+}
+
+#payment2 {
+    color: #027000;
 }
 
 #description_summary {
