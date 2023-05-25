@@ -24,6 +24,22 @@ p {
     box-sizing: border-box;
     border: 1px solid #027000;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+#contenedor_secundario1 {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#contenedor_secundario2 {
+    display: flex;
     justify-content: center;
     flex-flow: wrap;
     align-items: center;
@@ -39,4 +55,47 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.pago {
+    margin: 26px;
+    padding: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+}
+
+#pago1 {
+    background-color: #027000;
+    color: #FAF014;
+}
+
+#pago2 {
+    background-color: #FAF014;
+}
+
+#pago3 {
+    background-color: #FAF014;
+    color: #027000;
+}
+
+#pago4 {
+    background-color: #027000;
+    color: #FAF014;
+}
+
+#description_summary {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 300px;
+    width: 80%;
+    text-align: left;
+    color: #027000;
+}
+
+.yellow_color {
+    color: #FAF014;
 }
