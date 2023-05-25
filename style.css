@@ -57,3 +57,18 @@ main {
     background-color: #027000;
     color: #FAF014;
 }
+
+#description_summary {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 300px;
+    width: 80%;
+    text-align: left;
+    color: #027000;
+}
+
+.yellow_color {
+    color: #FAF014;
+}
