@@ -23,9 +23,7 @@ class myHeader extends HTMLElement{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                height: 8vh;
                 padding: 1rem;
-
             }
 
             div {
@@ -92,12 +90,10 @@ class myH1 extends HTMLElement{
         <style>
             h1 {
                 font-style: italic;
-                margin-bottom: 75px;
                 font-weight: 700;
                 font-size: 40px;
                 line-height: 48px;
                 color: #027000;
-                height: 12vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -116,24 +112,39 @@ class myLink extends HTMLElement{
         this._shadowRoot = this.attachShadow({mode:'open'});
     }
 
+    static get observedAttributes() {
+        return ['color', 'background', 'color-border'];
+      }
+
     connectedCallback(){
         this._render();
      }
 
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+          this._render();
+        }
+    }
+    
     _render() {
+        const colorEnlace = this.getAttribute('color');
+        const backgroundEnlace = this.getAttribute('background');
+        const colorBorderEnlace = this.getAttribute('color-border');
         this._shadowRoot.innerHTML = `
         <style>
             #link_go_back {
-                border: 1px solid #FAF014;
+                border: 1px solid ${colorBorderEnlace};
                 font-size: 35px;
                 margin:  auto auto 40px;
+                margin-top: 5px;
                 padding:  7px 0px;
                 font-style: italic;
+                background-color: ${backgroundEnlace}
             }
 
             #go_back{
                 text-decoration: none;
-                color: #027000;
+                color: ${colorEnlace};
                 padding: 1rem;
             }
         </style>
@@ -146,3 +157,94 @@ class myLink extends HTMLElement{
 }
 
 window.customElements.define('my-link', myLink)
+
+
+class myForm extends HTMLElement{
+    constructor(){
+        super()
+        this._shadowRoot = this.attachShadow({mode:'open'});
+    }
+
+    connectedCallback(){
+        this._render();
+    }
+
+    _render() {
+        this._shadowRoot.innerHTML = `
+        <style>
+            form {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #campos_comida {
+                display: flex;
+            }
+            
+            #contenedor_campos {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            fieldset {
+                border: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 90%;
+            }
+            
+            label {
+                font-style: italic;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 36px;
+                font-family: 'Inter';
+                color: #027000;
+            }
+            
+            .label_form {
+                margin-top: 0.5rem;
+            }
+            
+            #date {
+                height: 40px;
+            
+            }
+            
+            input {
+                height: 33px;
+                border: 1px solid black;
+            }
+            
+            .input_food {
+                border: 1px solid #027000;
+            }
+            
+            input[placeholder] {
+                text-align: right;
+            }
+        </style>
+
+        <form action="">
+            <fieldset>
+                <label class="label_form" for="date">Select a Date</label>
+                <input type="datetime" name="" id="date">
+            </fieldset>
+            <fieldset id="campos_comida">
+                <label class="label_form" id="food" for="food">Select a Dinner</label>
+                <div id="contenedor_campos">                    
+                    <input type="text" name="" id="food" class="input_food" placeholder="search for a dinner">
+                    <input type="number" name="" id="quantity" class="input_food" placeholder="how many?">
+                </div>
+            </fieldset>
+        </form>
+        `;
+    }
+}
+
+window.customElements.define('my-form', myForm)
